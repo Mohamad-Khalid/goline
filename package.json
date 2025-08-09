@@ -1,0 +1,22 @@
+{
+  "name": "goline-website",
+  "version": "1.0.0",
+  "main": "index.js",
+ "scripts": {
+  "dev": "npx tailwindcss -i ./src/css/input.css -o ./src/css/styles.css --watch",
+  "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/styles.css --minify && npm run copy:all",
+  "copy:all": "npm run copy:html && npm run copy:assets && npm run copy:js",
+  "copy:html": "mkdir dist 2>nul & xcopy src\\*.html dist\\ /Y",
+  "copy:assets": "mkdir dist\\assets 2>nul & xcopy src\\assets dist\\assets /E /Y",
+  "copy:js": "mkdir dist\\js 2>nul & xcopy src\\js dist\\js /E /Y"
+}
+
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
