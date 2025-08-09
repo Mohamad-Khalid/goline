@@ -1,11 +1,776 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Goline</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/transition.css">
+
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+
+<body
+    class="min-h-full bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-english">
+
+    <!-- ...existing code... -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700 shadow-lg backdrop-blur-md  transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-5 py-3">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <!-- ...existing code... -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span class="flex items-center">
+                        <img src="./assets/logo.png" alt="GOLINE Logo"
+                            class="h-20 w-auto max-w-[280px] object-contain drop-shadow-lg transition-transform duration-200 group-hover:scale-105" />
+                    </span>
+                </a>
+
+                <!-- ...existing code... -->
+                <!-- ...existing code... -->
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-2">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_home">Home</a>
+                    <a href="./about-us.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_about">About Us</a>
+                    <a href="./services.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_services">Services</a>
+                    <a href="./partners.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="partners">Partners</a>
+                    <a href="#news"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="news">News</a>
+                    <a href="./contact-us.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_contact">Contact
+                        Us</a>
+                </nav>
+                <!-- Actions -->
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleLanguage()"
+                        class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full px-3 py-2 flex items-center gap-2 hover:bg-primary hover:text-white transition-all duration-300"
+                        aria-label="Toggle language">
+                        <span id="lang-icon" class="text-sm font-medium">عربي</span>
+                    </button>
+                    <button onclick="toggleTheme()"
+                        class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full p-2 flex items-center gap-2 hover:bg-primary hover:text-white transition-all duration-300"
+                        aria-label="Toggle dark/light mode">
+                        <span id="theme-icon" class="text-xl">☀️</span>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button"
+                        class="md:hidden  dark:bg-gray-800  rounded p-2 ml-2 mb-2 hover:bg-primary hover:text-white transition-all duration-300"
+                        aria-label="Toggle mobile menu" aria-expanded="false">
+                        <!-- Hamburger Icon -->
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 transition-transform duration-200 block" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <!-- X Icon -->
+                        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 transition-transform duration-200 hidden" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Nav -->
+            <nav id="mobile-menu" class="md:hidden hidden mt-2 mb-2">
+                <ul class="flex flex-col gap-2 bg-white/95 dark:bg-gray-900/95 rounded-xl  p-4">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_home">Home</a>
+                    <a href="./about-us.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="about_us">About
+                        Us</a>
+                    <a href="./services.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_services">Services</a>
+                    <a href="./partners.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="partners">Partners</a>
+                    <a href="#news"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="news">News</a>
+                    <a href="./contact-us.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
+                        data-key="nav_contact">Contact
+                        Us</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ...existing code... -->
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-[480px] md:h-[600px] flex items-center justify-start overflow-hidden">
+            <!-- Slider Wrapper -->
+            <div id="hero-slider" class="absolute inset-0 w-full h-full">
+                <!-- Slide 1: Image -->
+                <div
+                    class="hero-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 z-10">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
+                        alt="Network"
+                        class="w-full h-full object-cover object-center brightness-75 transition-all duration-1000" />
+                </div>
+                <!-- Slide 2: Image -->
+                <div class="hero-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 z-10">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+                        alt="IT Solutions"
+                        class="w-full h-full object-cover object-center brightness-75 transition-all duration-1000" />
+                </div>
+                <!-- Slide 3: Image -->
+                <div class="hero-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 z-10">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80"
+                        alt="IT Solutions"
+                        class="w-full h-full object-cover object-center brightness-75 transition-all duration-1000" />
+                </div>
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-20"></div>
+            </div>
+            <!-- Hero Content Slides -->
+            <div class="relative z-30 flex flex-col justify-center h-full w-full">
+                <div class="max-w-6xl ms-48 ps-5 h-full flex items-center">
+                    <!-- Slides content -->
+                    <div class="w-full relative">
+                        <div class="hero-content-slide absolute left-0 top-1/2 -translate-y-1/2 w-full transition-all duration-700 opacity-100 translate-x-0 scale-100"
+                            style="z-index:30;">
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-xl animate-fade-in-up"
+                                data-key="hero_title">
+                                Welcome to GOLINE
+                            </h1>
+                            <p class="text-lg md:text-2xl text-gray-100 mb-8 drop-shadow-lg animate-fade-in-up delay-100"
+                                data-key="hero_subtitle">
+                                Your trusted partner in computer networks and information technology solutions across Egypt
+                            </p>
+                            <a href="#services"
+                                class="inline-block px-8 py-4 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark hover:-translate-y-1 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up delay-200"
+                                data-key="hero_cta">Explore Our Services</a>
+                        </div>
+                        <div class="hero-content-slide absolute left-0 top-1/2 -translate-y-1/2 w-full transition-all duration-700 opacity-0 translate-x-8 scale-95"
+                            style="z-index:30;">
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-xl animate-fade-in-up">
+                                Enterprise IT Solutions
+                            </h1>
+                            <p class="text-lg md:text-2xl text-gray-100 mb-8 drop-shadow-lg animate-fade-in-up delay-100">
+                                Secure, scalable, and innovative IT infrastructure for your business growth.
+                            </p>
+                            <a href="#services"
+                                class="inline-block px-8 py-4 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark hover:-translate-y-1 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up delay-200">
+                                Discover More
+                            </a>
+                        </div>
+                        <div class="hero-content-slide absolute left-0 top-1/2 -translate-y-1/2 w-full transition-all duration-700 opacity-0 translate-x-8 scale-95"
+                            style="z-index:30;">
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-xl animate-fade-in-up">
+                                Digital Transformation Experts
+                            </h1>
+                            <p class="text-lg md:text-2xl text-gray-100 mb-8 drop-shadow-lg animate-fade-in-up delay-100">
+                                Empowering organizations with next-generation digital solutions and support.
+                            </p>
+                            <a href="#services"
+                                class="inline-block px-8 py-4 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark hover:-translate-y-1 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up delay-200">
+                                Start Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Controls -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-40">
+                <button
+                    class="hero-dot w-3 h-3 rounded-full bg-white/70 border-2 border-primary transition-all duration-300"
+                    aria-label="Slide 1"></button>
+                <button
+                    class="hero-dot w-3 h-3 rounded-full bg-white/40 border-2 border-primary transition-all duration-300"
+                    aria-label="Slide 2"></button>
+                <button
+                    class="hero-dot w-3 h-3 rounded-full bg-white/40 border-2 border-primary transition-all duration-300"
+                    aria-label="Slide 3"></button>
+            </div>
+        </section>
+
+         <!-- About Section -->
+        <section id="about" class="py-16">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100"
+                    data-key="about_title">About GOLINE</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="text-lg leading-relaxed space-y-6">
+                        <p class="text-gray-700 dark:text-gray-300" data-key="about_para1">We are delighted to welcome
+                            you to our website and pleased to introduce you to our company and the services we offer. At
+                            GOLINE, we are an Egyptian company specializing in computer networks and information
+                            technology.</p>
+
+                        <p class="text-gray-700 dark:text-gray-300" data-key="about_para2">For over three years, we have
+                            been providing integrated technical solutions that meet the needs of individuals,
+                            businesses, and government entities across Egypt. We believe that technology is a key to
+                            success, and we are always committed to being true partners to our clients on their path to
+                            digital advancement.</p>
+
+                        <p class="text-gray-700 dark:text-gray-300" data-key="about_para3">Our comprehensive services
+                            include network design and implementation, cybersecurity solutions, software development,
+                            digital marketing, and IT consultancy. We also provide technical training and support
+                            services to ensure the sustainability and effectiveness of our solutions.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="./assets/1191799_651.svg" alt="GOLINE Network Engineering Team"
+                            class="max-w-full h-auto rounded-lg shadow-sm">
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+                    <div
+                        class="p-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-primary mb-4" data-key="mission_title">Our Mission</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-key="mission_para1">At GOLINE, we believe
+                            that technology is no longer just a tool — it is a key partner in driving business growth
+                            and development. Our mission is to provide integrated and reliable technological solutions
+                            that empower our clients to fully leverage digital capabilities, streamline their
+                            operations, and enhance efficiency.</p>
+                        <p class="text-gray-700 dark:text-gray-300" data-key="mission_para2">We are committed to meeting
+                            our clients' needs by delivering high-quality services in computer networking, information
+                            technology, digital marketing, and software development, while offering ongoing technical
+                            support and consultancy.</p>
+                    </div>
+                    <div
+                        class="p-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-primary mb-4" data-key="vision_title">Our Vision</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-key="vision_para1">At GOLINE, we aspire to
+                            be one of the leading companies in the field of information technology and digital
+                            transformation across the region. Our vision is to continuously expand our service
+                            offerings, adopt the latest technologies, and build long-term strategic partnerships.</p>
+                        <p class="text-gray-700 dark:text-gray-300" data-key="vision_para2">We aim to become the first
+                            choice for those seeking advanced and secure digital solutions, contributing to the digital
+                            transformation journey in Egypt and the Arab world by developing smart and flexible digital
+                            environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100"
+                    data-key="services_title">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Service 1 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+                                alt="Network Solutions"
+                                class="mx-auto mb-6 rounded-lg object-cover  shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_network_title">Network Solutions</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_network_desc">
+                                Design, implementation, management, and maintenance of computer networks for businesses and government entities.
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Service 2 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                                alt="Software Development"
+                                class="mx-auto mb-6 rounded-lg object-cover  shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_software_title">Software Development</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_software_desc">
+                                Custom software, web and mobile applications, and modern e-commerce platform development.
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Service 3 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80"
+                                alt="IT Consultancy"
+                                class="mx-auto mb-6 rounded-lg object-cover  shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_consultancy_title">IT Consultancy</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_consultancy_desc">
+                                Expert consultancy in digital transformation, IT solutions, and technical training programs.
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Service 4 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                                alt="Technology Infrastructure"
+                                class="mx-auto mb-6 rounded-lg object-cover shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_infrastructure_title">Technology Infrastructure</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_infrastructure_desc">
+                                Establishment and management of technology zones and their related infrastructure systems.
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Service 5 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+                                alt="Cybersecurity"
+                                class="mx-auto mb-6 rounded-lg object-cover  shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_security_title">Cybersecurity</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_security_desc">
+                                Comprehensive cybersecurity services, data protection, and safeguarding systems against cyber threats.
+                            </p>
+                        </div>
+                    </a>
+                    <!-- Service 6 -->
+                    <a href="./services.html" class="block group">
+                        <div
+                            class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+                                alt="Digital Marketing"
+                                class="mx-auto mb-6 rounded-lg object-cover  shadow-md group-hover:scale-105 transition-transform duration-300" />
+                            <h3 class="text-xl font-semibold text-primary mb-4" data-key="service_marketing_title">Digital Marketing</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-key="service_marketing_desc">
+                                Digital marketing solutions, search engine optimization, and strategic digital content development.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="partners" class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100">
+                    Our Partners
+                </h2>
+                <div class="relative">
+                    <!-- Slider Controls (Left/Right) -->
+                    <button id="partners-prev"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white rounded-full p-2 shadow-lg hover:bg-primary-dark transition-all duration-300 hidden md:block"
+                        aria-label="Previous">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="partners-next"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white rounded-full p-2 shadow-lg hover:bg-primary-dark transition-all duration-300 hidden md:block"
+                        aria-label="Next">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <!-- Slider Wrapper -->
+                    <div id="partners-slider" class="overflow-hidden">
+                        <div id="partners-track" class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0);">
+                            <!-- Partner cards (add as many as you want) -->
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                                        alt="Partner 1"
+                                        class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Tech Innovators</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Cybersecurity experts partnering with us to deliver robust and secure IT environments.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                                        alt="Partner 2"
+                                        class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">SecureNet</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Cybersecurity experts partnering with us to deliver robust and secure IT environments.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+                                        alt="Partner 3"
+                                        class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Digital Bridge</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Specialists in digital marketing and transformation, helping us expand our clients' digital reach.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+                                        alt="Partner 4"
+                                        class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">CloudX</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Cloud computing pioneers, enabling seamless business scalability and innovation.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- ...add as many as needed... -->
+                        </div>
+                    </div>
+                    <!-- Slider Dots -->
+                    <div class="flex justify-center gap-3 mt-8" id="partners-dots"></div>
+                </div>
+            </div>
+        </section>
+
+                <!-- ...existing code... -->
+        <section id="news" class="py-16 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100">
+                    Latest News
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+                            alt="News 1" class="rounded-lg mb-4 object-cover w-full h-40">
+                        <h3 class="text-xl font-semibold text-primary mb-2">GOLINE Launches New Cybersecurity Service</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            We are excited to announce our new comprehensive cybersecurity service, designed to protect your business from evolving digital threats.
+                        </p>
+                        <a href="#" class="mt-auto text-primary hover:underline font-medium">Read More</a>
+                    </div>
+                    <!-- News 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+                            alt="News 2" class="rounded-lg mb-4 object-cover w-full h-40">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Digital Transformation for SMEs</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Discover how GOLINE is helping small and medium enterprises embrace digital transformation for greater efficiency and growth.
+                        </p>
+                        <a href="#" class="mt-auto text-primary hover:underline font-medium">Read More</a>
+                    </div>
+                    <!-- News 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+                            alt="News 3" class="rounded-lg mb-4 object-cover w-full h-40">
+                        <h3 class="text-xl font-semibold text-primary mb-2">GOLINE Partners with Tech Innovators</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            We are proud to announce our partnership with Tech Innovators to deliver advanced cloud solutions to our clients.
+                        </p>
+                        <a href="#" class="mt-auto text-primary hover:underline font-medium">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+       
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100"
+                    data-key="contact_title">Get In Touch</h2>
+                <div class="text-center max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8" data-key="contact_desc">Thank you for
+                        visiting our website. We hope you find everything you're looking for, and we always welcome your
+                        communication.</p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-gray-100 mb-6" data-key="contact_cta_text">
+                        Ready to start your digital transformation journey with GOLINE?</p>
+                    <a href="#"
+                        class="inline-block px-8 py-4 bg-primary text-white rounded-md font-semibold hover:bg-primary-dark hover:-translate-y-1 shadow-md hover:shadow-lg transition-all duration-300"
+                        data-key="contact_cta">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ...existing code... -->
+    <footer
+        class="bg-gray-900 dark:bg-gray-950 text-gray-200 dark:text-gray-300 border-t border-gray-800 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <div class="text-2xl font-bold text-primary mb-3">GOLINE</div>
+                <p class="text-gray-400 mb-4">Egyptian Company Specializing in Computer Networks &amp; IT Solutions</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" aria-label="Facebook" class="hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04A4.28 4.28 0 0 0 16.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 8.99 4.07 7.13 1.64 4.15c-.37.64-.58 1.39-.58 2.19 0 1.51.77 2.85 1.94 3.63-.72-.02-1.4-.22-1.99-.55v.06c0 2.11 1.5 3.87 3.49 4.27-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.69 2.12 2.92 3.99 2.95A8.6 8.6 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.7 8.7 0 0 0 24 4.59a8.48 8.48 0 0 1-2.54.7z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.58h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.62 2.01 3.62 4.62v4.69z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-primary">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
+                    <li><a href="#services" class="hover:text-primary transition">Services</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-primary">Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-primary transition">Help Center</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-primary">Contact</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li>
+                        <span class="block">Email:</span>
+                        <a href="mailto:info@goline.com" class="hover:text-primary transition">info@goline.com</a>
+                    </li>
+                    <li>
+                        <span class="block">Phone:</span>
+                        <a href="tel:+201234567890" class="hover:text-primary transition">+20 123 456 7890</a>
+                    </li>
+                    <li>
+                        <span class="block">Location:</span>
+                        <span>Egypt, Cairo</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 dark:border-gray-700 mt-8">
+            <div class="max-w-6xl mx-auto px-5 py-6   items-center text-center text-sm text-gray-400">
+                <span>©
+                    <script>document.write(new Date().getFullYear())</script> GOLINE. All rights reserved.
+                </span>
+            </div>
+        </div>
+    </footer>
+    <!-- ...existing code... -->
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top"
+        class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark transition-all duration-300 opacity-0 pointer-events-none"
+        style="backdrop-filter: blur(6px);">
+        <!-- Up arrow icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            const contentSlides = document.querySelectorAll('.hero-content-slide');
+            let current = 0;
+            let sliderInterval = null;
+
+            function showSlide(idx) {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = i === idx ? '1' : '0';
+                    slide.style.zIndex = i === idx ? '15' : '10';
+                });
+                contentSlides.forEach((content, i) => {
+                    if (i === idx) {
+                        content.style.opacity = '1';
+                        content.style.transform = 'translateY(-50%) translateX(0) scale(1)';
+                        content.style.zIndex = '30';
+                        content.classList.add('animate-fade-in-up');
+                    } else {
+                        content.style.opacity = '0';
+                        content.style.transform = 'translateY(-50%) translateX(32px) scale(0.95)';
+                        content.style.zIndex = '20';
+                        content.classList.remove('animate-fade-in-up');
+                    }
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-white/70', i === idx);
+                    dot.classList.toggle('bg-white/40', i !== idx);
+                });
+                current = idx;
+            }
+
+            function nextSlide() {
+                showSlide((current + 1) % slides.length);
+            }
+
+            // Dot controls
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    showSlide(idx);
+                    resetInterval();
+                });
+            });
+
+            function resetInterval() {
+                clearInterval(sliderInterval);
+                sliderInterval = setInterval(nextSlide, 6000);
+            }
+
+            // Init
+            showSlide(0);
+            sliderInterval = setInterval(nextSlide, 6000);
+        });
+    </script>
+    <script>
+        // Partners slider logic (always show 3, move 1 at a time, infinite, with controls)
+        document.addEventListener('DOMContentLoaded', function () {
+            const partnersTrack = document.getElementById('partners-track');
+            const partnersSlider = document.getElementById('partners-slider');
+            const partnersPrev = document.getElementById('partners-prev');
+            const partnersNext = document.getElementById('partners-next');
+            const dotsContainer = document.getElementById('partners-dots');
+            let partnerCards = Array.from(partnersTrack.children);
+            let visibleCount = window.innerWidth < 768 ? 1 : 3;
+            let totalPartners = partnerCards.length;
+            let partnerCurrent = 0;
+            let partnerInterval = null;
+
+            // Clone for infinite effect
+            function setupClones() {
+                // Remove previous clones
+                partnersTrack.querySelectorAll('.clone').forEach(el => el.remove());
+                partnerCards = Array.from(partnersTrack.children).filter(el => !el.classList.contains('clone'));
+                totalPartners = partnerCards.length;
+                visibleCount = window.innerWidth < 768 ? 1 : 3;
+
+                // Clone last N to start
+                for (let i = totalPartners - visibleCount; i < totalPartners; i++) {
+                    let clone = partnerCards[i].cloneNode(true);
+                    clone.classList.add('clone');
+                    partnersTrack.insertBefore(clone, partnerCards[0]);
+                }
+                // Clone first N to end
+                for (let i = 0; i < visibleCount; i++) {
+                    let clone = partnerCards[i].cloneNode(true);
+                    clone.classList.add('clone');
+                    partnersTrack.appendChild(clone);
+                }
+                // Set initial position
+                partnersTrack.style.transition = 'none';
+                partnersTrack.style.transform = `translateX(-${visibleCount * (100 / visibleCount)}%)`;
+                setTimeout(() => {
+                    partnersTrack.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1)';
+                }, 50);
+                partnerCurrent = 0;
+            }
+
+            function renderDots() {
+                dotsContainer.innerHTML = '';
+                const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+                for (let i = 0; i < dotCount; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = `partners-dot w-3 h-3 rounded-full ${i === 0 ? 'bg-primary/70' : 'bg-primary/30'} border-2 border-primary transition-all duration-300`;
+                    btn.setAttribute('aria-label', `Partner ${i + 1}`);
+                    btn.addEventListener('click', () => {
+                        moveTo(i);
+                        resetPartnerInterval();
+                    });
+                    dotsContainer.appendChild(btn);
+                }
+            }
+
+            function moveTo(idx, animate = true) {
+                visibleCount = window.innerWidth < 768 ? 1 : 3;
+                const slideWidth = 100 / visibleCount;
+                if (!animate) partnersTrack.style.transition = 'none';
+                else partnersTrack.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1)';
+                partnerCurrent = idx;
+                partnersTrack.style.transform = `translateX(-${(idx + visibleCount) * slideWidth}%)`;
+                // Update dots
+                const dots = dotsContainer.querySelectorAll('.partners-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-primary/70', i === idx);
+                    dot.classList.toggle('bg-primary/30', i !== idx);
+                });
+            }
+
+            function nextPartnerSlide() {
+                moveTo(partnerCurrent + 1);
+                visibleCount = window.innerWidth < 768 ? 1 : 3;
+                const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+                if (partnerCurrent + 1 >= dotCount) {
+                    setTimeout(() => {
+                        moveTo(0, false);
+                    }, 700);
+                }
+            }
+
+            function prevPartnerSlide() {
+                moveTo(partnerCurrent - 1);
+                visibleCount = window.innerWidth < 768 ? 1 : 3;
+                const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+                if (partnerCurrent - 1 < 0) {
+                    setTimeout(() => {
+                        moveTo(dotCount - 1, false);
+                    }, 700);
+                }
+            }
+
+            function resetPartnerInterval() {
+                clearInterval(partnerInterval);
+                partnerInterval = setInterval(nextPartnerSlide, 4000);
+            }
+
+            function updateSlider() {
+                setupClones();
+                renderDots();
+                moveTo(0, false);
+                // Show/hide controls on desktop only
+                if (window.innerWidth < 768) {
+                    if (partnersPrev) partnersPrev.classList.add('hidden');
+                    if (partnersNext) partnersNext.classList.add('hidden');
+                } else {
+                    if (partnersPrev) partnersPrev.classList.remove('hidden');
+                    if (partnersNext) partnersNext.classList.remove('hidden');
+                }
+            }
+
+            if (partnersPrev) partnersPrev.addEventListener('click', () => {
+                prevPartnerSlide();
+                resetPartnerInterval();
+            });
+            if (partnersNext) partnersNext.addEventListener('click', () => {
+                nextPartnerSlide();
+                resetPartnerInterval();
+            });
+
+            window.addEventListener('resize', updateSlider);
+
+            // Init
+            updateSlider();
+            partnerInterval = setInterval(nextPartnerSlide, 4000);
+        });
+    </script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
