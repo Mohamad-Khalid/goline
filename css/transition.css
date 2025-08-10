@@ -1,0 +1,33 @@
+
+/* Smooth fade and slide for hero content */
+.hero-content-slide {
+    transition:
+        opacity 0.9s cubic-bezier(.4,0,.2,1),
+        transform 0.9s cubic-bezier(.4,0,.2,1),
+        filter 0.9s cubic-bezier(.4,0,.2,1);
+    will-change: opacity, transform, filter;
+}
+.hero-slide {
+    transition: opacity 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-2px); /* slight overshoot for smoothness */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+.animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
