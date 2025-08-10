@@ -123,11 +123,11 @@ function toggleTheme() {
 
     if (html.classList.contains('dark')) {
         html.classList.remove('dark');
-        themeIcon.textContent = '🌙';
+        themeIcon.innerHTML = '<img src="./assets/moon.svg" alt="Light Mode">';
         localStorage.setItem('theme', 'light');
     } else {
         html.classList.add('dark');
-        themeIcon.textContent = '☀️';
+        themeIcon.innerHTML = '<img src="./assets/sun.svg" alt="Dark Mode">';
         localStorage.setItem('theme', 'dark');
     }
 }
@@ -140,9 +140,9 @@ function initTheme() {
 
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.documentElement.classList.add('dark');
-        themeIcon.textContent = '☀️';
+        themeIcon.innerHTML = '<img src="./assets/sun.svg" alt="Dark Mode">';
     } else {
-        themeIcon.textContent = '🌙';
+        themeIcon.innerHTML = '<img src="./assets/moon.svg" alt="Light Mode">';
     }
 }
 
@@ -152,10 +152,10 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         const themeIcon = document.getElementById('theme-icon');
         if (e.matches) {
             document.documentElement.classList.add('dark');
-            themeIcon.textContent = '☀️';
+            themeIcon.innerHTML = '<img src="./assets/sun.svg" alt="Dark Mode">';
         } else {
             document.documentElement.classList.remove('dark');
-            themeIcon.textContent = '🌙';
+            themeIcon.innerHTML = '<img src="./assets/moon.svg" alt="Light Mode">';
         }
     }
 });
