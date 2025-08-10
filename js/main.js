@@ -3,7 +3,7 @@ const translations = {
     en: {
         company_name: "GOLINE",
         nav_home: "Home",
-        about_us:"About Us",
+        about_us: "About Us",
         partners: "Partners",
         nav_services: "Services",
         nav_about: "About",
@@ -185,7 +185,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Toggle mobile menu functionality
-// ...existing code...
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -202,7 +201,6 @@ function toggleMobileMenu() {
         closeIcon.classList.toggle('hidden', isExpanded);
     }
 }
-// ...existing code...
 
 // Close mobile menu when clicking on a link
 function setupMobileMenuLinks() {
@@ -253,9 +251,9 @@ function setupScrollToTopButton() {
 
 // handle hero section
 function handleHeroSection() {
-document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
+    const contentSlides = document.querySelectorAll('.hero-content-slide');
     let current = 0;
     let sliderInterval = null;
 
@@ -263,10 +261,18 @@ document.addEventListener('DOMContentLoaded', function () {
         slides.forEach((slide, i) => {
             slide.style.opacity = i === idx ? '1' : '0';
             slide.style.zIndex = i === idx ? '15' : '10';
-            // Show controls if this slide contains a video
-            const video = slide.querySelector('video');
-            if (video) {
-                video.controls = (i === idx);
+        });
+        contentSlides.forEach((content, i) => {
+            if (i === idx) {
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(-50%) translateX(0) scale(1)';
+                content.style.zIndex = '30';
+                content.classList.add('animate-fade-in-up');
+            } else {
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(-50%) translateX(32px) scale(0.95)';
+                content.style.zIndex = '20';
+                content.classList.remove('animate-fade-in-up');
             }
         });
         dots.forEach((dot, i) => {
@@ -280,7 +286,6 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide((current + 1) % slides.length);
     }
 
-    // Dot controls
     dots.forEach((dot, idx) => {
         dot.addEventListener('click', () => {
             showSlide(idx);
@@ -293,10 +298,148 @@ document.addEventListener('DOMContentLoaded', function () {
         sliderInterval = setInterval(nextSlide, 6000);
     }
 
-    // Init
     showSlide(0);
     sliderInterval = setInterval(nextSlide, 6000);
-});
+}
+
+// handle partners slider
+function handlePartnersSlider() {
+    const partnersTrack = document.getElementById('partners-track');
+    if (!partnersTrack) return; // Exit if not on this page
+
+    const partnersPrev = document.getElementById('partners-prev');
+    const partnersNext = document.getElementById('partners-next');
+    const dotsContainer = document.getElementById('partners-dots');
+    let partnerCards = Array.from(partnersTrack.children);
+    let visibleCount = window.innerWidth < 768 ? 1 : 3;
+    let totalPartners = partnerCards.length;
+    let partnerCurrent = 0;
+    let partnerInterval = null;
+
+    function setupClones() {
+        partnersTrack.querySelectorAll('.clone').forEach(el => el.remove());
+        partnerCards = Array.from(partnersTrack.children).filter(el => !el.classList.contains('clone'));
+        totalPartners = partnerCards.length;
+        visibleCount = window.innerWidth < 768 ? 1 : 3;
+
+        for (let i = totalPartners - visibleCount; i < totalPartners; i++) {
+            let clone = partnerCards[i].cloneNode(true);
+            clone.classList.add('clone');
+            partnersTrack.insertBefore(clone, partnerCards[0]);
+        }
+        for (let i = 0; i < visibleCount; i++) {
+            let clone = partnerCards[i].cloneNode(true);
+            clone.classList.add('clone');
+            partnersTrack.appendChild(clone);
+        }
+
+        partnersTrack.style.transition = 'none';
+        partnersTrack.style.transform = `translateX(-${visibleCount * (100 / visibleCount)}%)`;
+        setTimeout(() => {
+            partnersTrack.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1)';
+        }, 50);
+        partnerCurrent = 0;
+    }
+
+    function renderDots() {
+        dotsContainer.innerHTML = '';
+        const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+        for (let i = 0; i < dotCount; i++) {
+            const btn = document.createElement('button');
+            btn.className = `partners-dot w-3 h-3 rounded-full ${i === 0 ? 'bg-primary/70' : 'bg-primary/30'} border-2 border-primary transition-all duration-300`;
+            btn.setAttribute('aria-label', `Partner ${i + 1}`);
+            btn.addEventListener('click', () => {
+                moveTo(i);
+                resetPartnerInterval();
+            });
+            dotsContainer.appendChild(btn);
+        }
+    }
+
+    function moveTo(idx, animate = true) {
+        visibleCount = window.innerWidth < 768 ? 1 : 3;
+        const slideWidth = 100 / visibleCount;
+        if (!animate) partnersTrack.style.transition = 'none';
+        else partnersTrack.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1)';
+        partnerCurrent = idx;
+        partnersTrack.style.transform = `translateX(-${(idx + visibleCount) * slideWidth}%)`;
+
+        const dots = dotsContainer.querySelectorAll('.partners-dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-primary/70', i === idx);
+            dot.classList.toggle('bg-primary/30', i !== idx);
+        });
+    }
+
+    function nextPartnerSlide() {
+        moveTo(partnerCurrent + 1);
+        visibleCount = window.innerWidth < 768 ? 1 : 3;
+        const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+        if (partnerCurrent + 1 >= dotCount) {
+            setTimeout(() => {
+                moveTo(0, false);
+            }, 700);
+        }
+    }
+
+    function prevPartnerSlide() {
+        moveTo(partnerCurrent - 1);
+        visibleCount = window.innerWidth < 768 ? 1 : 3;
+        const dotCount = Math.max(totalPartners - visibleCount + 1, 1);
+        if (partnerCurrent - 1 < 0) {
+            setTimeout(() => {
+                moveTo(dotCount - 1, false);
+            }, 700);
+        }
+    }
+
+    function resetPartnerInterval() {
+        clearInterval(partnerInterval);
+        partnerInterval = setInterval(nextPartnerSlide, 4000);
+    }
+
+    function updateSlider() {
+        setupClones();
+        renderDots();
+        moveTo(0, false);
+
+        if (window.innerWidth < 768) {
+            if (partnersPrev) partnersPrev.classList.add('hidden');
+            if (partnersNext) partnersNext.classList.add('hidden');
+        } else {
+            if (partnersPrev) partnersPrev.classList.remove('hidden');
+            if (partnersNext) partnersNext.classList.remove('hidden');
+        }
+    }
+
+    if (partnersPrev) partnersPrev.addEventListener('click', () => {
+        prevPartnerSlide();
+        resetPartnerInterval();
+    });
+    if (partnersNext) partnersNext.addEventListener('click', () => {
+        nextPartnerSlide();
+        resetPartnerInterval();
+    });
+
+    window.addEventListener('resize', updateSlider);
+
+    updateSlider();
+    partnerInterval = setInterval(nextPartnerSlide, 4000);
+}
+
+// handle scroll animation
+function handleScrollAnimation() {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% is visible
+
+    sections.forEach(section => observer.observe(section));
 }
 
 // Initialize on page load
@@ -304,6 +447,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initTheme();
     updateLanguage();
     handleHeroSection();
+    handlePartnersSlider();
     setupMobileMenuLinks();
     setupScrollToTopButton();
+    handleScrollAnimation();
 });
