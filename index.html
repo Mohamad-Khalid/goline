@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="./css/transition.css">
 
     <link rel="stylesheet" href="./css/styles.css">
+
+
 </head>
 
 <body
@@ -43,9 +45,12 @@
                     <a href="./services.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
                         data-key="nav_services">Services</a>
-                    <a href="./partners.html"
+                    <a 
+                    href="./partners.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
-                        data-key="partners">Partners</a>
+                        data-key="partners">
+                        Partners
+                    </a>
                     <a href="./news.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white transition"
                         data-key="news">News</a>
@@ -123,7 +128,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative h-[480px] md:h-[600px] flex items-center justify-start overflow-hidden">
+        <section id="home" class="relative h-[600px] md:h-[600px] flex items-center justify-start overflow-hidden">
             <!-- Slider Wrapper -->
             <div id="hero-slider" class="absolute inset-0 w-full h-full">
                 <!-- Slide 1: Image -->
@@ -244,25 +249,34 @@
                     </div>
 
                 </div>
+            </div>
+        </section>
 
+        <!-- Mission and Vision Section -->
+        <section id="mission-vision" class="py-16">
+            <div class="max-w-6xl mx-auto px-5 text-justify">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
                     <div
                         class="p-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                        <h3 class="text-2xl font-semibold text-primary mb-4 text-center" data-key="mission_title">Our Mission</h3>
+                        <h3 class="text-2xl font-semibold text-primary mb-4 text-center" data-key="mission_title">Our
+                            Mission</h3>
                         <p class="text-gray-700 dark:text-gray-300 mb-4" data-key="mission_para1">At go-line, we believe
                             that technology is no longer just a tool — it is a key partner in driving business growth
                             and development. Our mission is to provide integrated and reliable technological solutions
                             that empower our clients to fully leverage digital capabilities, streamline their
                             operations, and enhance efficiency.</p>
-                        <p class="text-gray-700 dark:text-gray-300 " data-key="mission_para2">We are committed to meeting
+                        <p class="text-gray-700 dark:text-gray-300 " data-key="mission_para2">We are committed to
+                            meeting
                             our clients' needs by delivering high-quality services in computer networking, information
                             technology, digital marketing, and software development, while offering ongoing technical
                             support and consultancy.</p>
                     </div>
                     <div
                         class="p-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                        <h3 class="text-2xl font-semibold text-primary mb-4 text-center" data-key="vision_title">Our Vision</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-key="vision_para1">At go-line, we aspire to
+                        <h3 class="text-2xl font-semibold text-primary mb-4 text-center" data-key="vision_title">Our
+                            Vision</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-key="vision_para1">At go-line, we aspire
+                            to
                             be one of the leading companies in the field of information technology and digital
                             transformation across the region. Our vision is to continuously expand our service
                             offerings, adopt the latest technologies, and build long-term strategic partnerships.</p>
@@ -273,7 +287,9 @@
                     </div>
                 </div>
             </div>
+
         </section>
+
 
         <!-- Services Section -->
         <section id="services" class="py-16">
@@ -375,7 +391,7 @@
             </div>
         </section>
 
-
+        <!-- partner section -->
         <section id="partners" class="py-16 bg-gray-50 dark:bg-gray-900">
             <div class="max-w-6xl mx-auto px-5">
                 <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100">
@@ -399,57 +415,151 @@
                     </button>
                     <!-- Slider Wrapper -->
                     <div id="partners-slider" class="overflow-hidden">
-                        <div id="partners-track" class="flex transition-transform duration-700 ease-in-out"
+                        <div id="partners-track" class="partners-container flex transition-transform duration-700 ease-in-out"
                             style="transform: translateX(0);">
                             <!-- Partner cards (add as many as you want) -->
                             <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
-                                <div
-                                    class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
-                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-                                        alt="Partner 1" class="mb-6 rounded-lg object-cover  shadow-md" />
-                                    <h3 class="text-xl font-semibold text-primary mb-4">Tech Innovators</h3>
-                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
-                                        Cybersecurity experts partnering with us to deliver robust and secure IT
-                                        environments.
-                                    </p>
+                                <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+
+                                    <div>
+                                        <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/05/2560px-Logo_Legrand_SA.svg.jpg?fit=300%2C150&ssl=1"
+                                            alt="Legrand" class="mb-6 rounded-lg object-cover shadow-md" />
+                                        <h3 class="text-xl font-semibold text-primary mb-4">Legrand</h3>
+                                        <p class="h text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                            Operating worldwide, Legrand enhances electrical and digital
+                                            infrastructures, embracing digital transformation while promoting
+                                            sustainability...
+                                        </p>
+                                    </div>
+
+                                    <a href="partner.html?name=legrand"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
                                 <div
-                                    class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
-                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/05/Panduit.jpg?fit=300%2C150&ssl=1"
                                         alt="Partner 2" class="mb-6 rounded-lg object-cover  shadow-md" />
-                                    <h3 class="text-xl font-semibold text-primary mb-4">SecureNet</h3>
-                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
-                                        Cybersecurity experts partnering with us to deliver robust and secure IT
-                                        environments.
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Panduit</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Panduit understands that everyone’s challenges are unique, which is why we offer
+                                        an extensive product portfolio to help its customers achieve and exceed their
+                                        operational and financial goals. From data centers and office facilities...
+                                       
                                     </p>
+
+                                    <a href="partner.html?name=panduit"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
                                 <div
-                                    class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
-                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/05/gewiss-1-logo-png-transparent.jpg?fit=300%2C150&ssl=1"
                                         alt="Partner 3" class="mb-6 rounded-lg object-cover  shadow-md" />
-                                    <h3 class="text-xl font-semibold text-primary mb-4">Digital Bridge</h3>
-                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
-                                        Specialists in digital marketing and transformation, helping us expand our
-                                        clients' digital reach.
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Gewiss</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Founded in 1970 on the revolutionary innovation of using technopolymer in
+                                        electrical engineering, today GEWISS is the most important company in the
+                                        electrotechnical sector with Italian capital. GEWISS in the world...
+                                        
                                     </p>
+
+                                    <a href="partner.html?name=gewiss"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
                                 <div
-                                    class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/12/Rettal-new.jpg?fit=301%2C195&ssl=1"
                                         alt="Partner 4" class="mb-6 rounded-lg object-cover  shadow-md" />
-                                    <h3 class="text-xl font-semibold text-primary mb-4">CloudX</h3>
-                                    <p class="text-gray-600 dark:text-gray-300 text-center max-w-md">
-                                        Cloud computing pioneers, enabling seamless business scalability and innovation.
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Rittal</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Innovative strength has been woven into the Rittal DNA since its foundation in
+                                        1961. In its founding year Rittal launched the world’s first standard enclosure
+                                        on the market. Within just a few years, Rittal enclosures had become ...
+                                        
                                     </p>
+
+                                    <a href="partner.html?name=rittal"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
                                 </div>
                             </div>
-                            <!-- ...add as many as needed... -->
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/12/mirsan.jpg?fit=300%2C150&ssl=1"
+                                        alt="Partner 4" class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Mirsan</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Panduit understands that everyone’s challenges are unique, which is why we offer
+                                        an extensive product portfolio to help its customers achieve and exceed their
+                                        operational and financial goals. From data centers and office ...
+                                    </p>
+
+                                    <a href="partner.html?name=misran"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/12/Lantronix.jpg?fit=300%2C150&ssl=1"
+                                        alt="Partner 4" class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Lantronix</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Lantronix is a global provider of secure data access and management solutions
+                                        for IoT and remote environments. Their innovative technologies enable organizations
+                                        to connect, manage, and secure their devices and data, driving efficiency and
+                                        ...
+                                    </p>
+
+                                    <a href="partner.html?name=lantronix"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center px-4">
+                                <div
+                                    <div class="p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center shadow-md flex flex-col justify-between"
+                                    style="height: 600px;">
+                                    <img src="https://i0.wp.com/universe-distribution.me/wp-content/uploads/2023/05/Untitled-1.jpg?fit=300%2C150&ssl=1"
+                                        alt="Partner 4" class="mb-6 rounded-lg object-cover  shadow-md" />
+                                    <h3 class="text-xl font-semibold text-primary mb-4">Fluke networks</h3>
+                                    <p class="h-1/3 text-gray-600 dark:text-gray-300 text-center max-w-md">
+                                        Fluke Networks is the worldwide leader in certification, troubleshooting, and
+                                        installation tools for professionals who install and maintain critical network
+                                        cabling infrastructure. From installing the most advanced data centers to
+                                       ...
+                                    </p>
+
+                                    <a href="partner.html?name=fluke-networks"
+                                        class="mt-4 inline-block text-primary hover:underline">
+                                        Read More →
+                                    </a>
+                                </div>
+                            </div> 
+                            
                         </div>
                     </div>
                     <!-- Slider Dots -->
@@ -458,7 +568,7 @@
             </div>
         </section>
 
-        <!-- ...existing code... -->
+        <!-- News section -->
         <section id="news" class="py-16 bg-white dark:bg-gray-900">
             <div class="max-w-6xl mx-auto px-5">
                 <h2 class="text-4xl text-center mb-12 font-bold text-gray-800 dark:text-gray-100">
@@ -533,7 +643,7 @@
         <div class="max-w-6xl mx-auto px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Company Info -->
             <div>
-                <div class="text-2xl font-bold text-primary mb-3">go-line</div>
+                <div class="text-2xl font-bold text-primary mb-3">GOLINE</div>
                 <p class="text-gray-400 mb-4">Egyptian Company Specializing in Computer Networks &amp; IT Solutions</p>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" aria-label="Facebook" class="hover:text-primary transition">
@@ -564,32 +674,33 @@
                 <h4 class="text-lg font-semibold mb-4 text-primary">Company</h4>
                 <ul class="space-y-2">
                     <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
-                    <li><a href="#services" class="hover:text-primary transition">Services</a></li>
-                    <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                    <li><a href="./services.html" class="hover:text-primary transition">Services</a></li>
+                    <li><a href="./contact-us.html" class="hover:text-primary transition">Contact</a></li>
+
                 </ul>
             </div>
-            <div>
+            <!-- <div>
                 <h4 class="text-lg font-semibold mb-4 text-primary">Support</h4>
                 <ul class="space-y-2">
                     <li><a href="#" class="hover:text-primary transition">Help Center</a></li>
                     <li><a href="#" class="hover:text-primary transition">Privacy Policy</a></li>
                     <li><a href="#" class="hover:text-primary transition">Terms of Service</a></li>
                 </ul>
-            </div>
+            </div> -->
             <div>
                 <h4 class="text-lg font-semibold mb-4 text-primary">Contact</h4>
                 <ul class="space-y-2 text-gray-400">
                     <li>
                         <span class="block">Email:</span>
-                        <a href="mailto:info@go-line.com" class="hover:text-primary transition">info@go-line.com</a>
+                        <a href="mailto:info@goline-eg.com" class="hover:text-primary transition">info@goline-eg.com</a>
                     </li>
                     <li>
                         <span class="block">Phone:</span>
-                        <a href="tel:+201234567890" class="hover:text-primary transition">+20 123 456 7890</a>
+                        <a href="tel:+201234567890" class="hover:text-primary transition">+20120 2222125</a>
                     </li>
                     <li>
                         <span class="block">Location:</span>
-                        <span>Egypt, Cairo</span>
+                        <span>H6, Ibn Melka St, First Settlement, Cairo, Egypt</span>
                     </li>
                 </ul>
             </div>
@@ -597,7 +708,8 @@
         <div class="border-t border-gray-800 dark:border-gray-700 mt-8">
             <div class="max-w-6xl mx-auto px-5 py-6   items-center text-center text-sm text-gray-400">
                 <span>©
-                    <script>document.write(new Date().getFullYear())</script> go-line. All rights reserved.
+                    <script>document.write(new Date().getFullYear()); document.write(' ' + APP_CONFIG.companyName);</script>
+                    . All rights reserved.
                 </span>
             </div>
         </div>
